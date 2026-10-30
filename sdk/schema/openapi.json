@@ -151,7 +151,7 @@
   "info": {
     "description": "REST v1 with decimal-string IDs and timestamps, scoped bearer authentication and bounded requests. Input schemas are shared with MCP. Responses remain extensible JSON objects; this specification is not a complete generated response type library.",
     "title": "ChronoDB Community API",
-    "version": "0.4.0-alpha.3"
+    "version": "0.4.0-alpha.4"
   },
   "openapi": "3.1.0",
   "paths": {

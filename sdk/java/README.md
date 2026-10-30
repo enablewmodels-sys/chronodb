@@ -1,6 +1,6 @@
 # Java SDK
 
-JDK 17+, Gson 2.14.0. From the repository root: `mvn -f sdk/java/pom.xml install`. This installs to your local Maven repository. Add `co.chronodb:chronograph-community:0.4.0-alpha.3` to your application's dependencies; it has not been published to Maven Central (see [Publishing to Maven Central](#publishing-to-maven-central-maintainers)).
+JDK 17+, Gson 2.14.0. From the repository root: `mvn -f sdk/java/pom.xml install`. This installs to your local Maven repository. Add `co.chronodb:chronograph-community:0.4.0-alpha.4` to your application's dependencies; it has not been published to Maven Central (see [Publishing to Maven Central](#publishing-to-maven-central-maintainers)).
 
 ```java
 import io.chronograph.Client;
@@ -24,14 +24,14 @@ Source-available under [PolyForm Perimeter 1.0.0](LICENSE); preserve [NOTICE](NO
 
 ## Publishing to Maven Central (maintainers)
 
-**Nothing in this module has been published to Maven Central.** `0.4.0-alpha.3` exists as
+**Nothing in this module has been published to Maven Central.** `0.4.0-alpha.4` exists as
 source in this repository and as a local `mvn install` artifact only. The POM now carries
 what Central's automated validation and its reviewer checklist look for:
 
-- a non-SNAPSHOT version `0.4.0-alpha.3`, matching the Python (`0.4.0a3`), TypeScript, Dart and C# SDKs
+- a non-SNAPSHOT version `0.4.0-alpha.4`, matching the Python (`0.4.0a4`), TypeScript, Dart and C# SDKs
 - `name`, `description`, `url`, `organization` and `inceptionYear`
 - `licenses`: PolyForm Perimeter 1.0.0 with its real name and a version-pinned canonical URL, a `distribution` element and an explicit SPDX caveat. PolyForm 1.0.0 has no SPDX identifier (the SPDX licence list 3.29.0 carries only PolyForm Noncommercial and Small Business), and the old `polyformproject.org/licenses/perimeter/1.0.0/` page now returns 404, so the POM cites the tag-pinned text instead
-- `developers` (ChronoDB, Inc., enablewmodels@gmail.com) and `scm` with `connection`, `developerConnection` and `tag v0.4.0-alpha.3`
+- `developers` (ChronoDB, Inc., enablewmodels@gmail.com) and `scm` with `connection`, `developerConnection` and `tag v0.4.0-alpha.4`
 - `issueManagement` and a `distributionManagement` target for the Central Portal
 - `maven-source-plugin` 3.4.0 and `maven-javadoc-plugin` 3.12.0, which attach the required `-sources.jar` and `-javadoc.jar`
 - `maven-gpg-plugin` 3.2.8 in the `release` profile, which signs every uploaded file
@@ -40,7 +40,7 @@ what Central's automated validation and its reviewer checklist look for:
 ```sh
 # 1. Build and sign locally (no upload, no verified namespace needed yet)
 mvn -f sdk/java/pom.xml -Prelease -Dgpg.keyname=<your-key-id> verify
-# 2. Confirm target/ holds chronograph-community-0.4.0-alpha.3{,-sources,-javadoc}.jar{,.asc}
+# 2. Confirm target/ holds chronograph-community-0.4.0-alpha.4{,-sources,-javadoc}.jar{,.asc}
 ls sdk/java/target/*.jar*
 # 3. Publish (needs a Central Portal user token in ~/.m2/settings.xml under the server id central)
 mvn -f sdk/java/pom.xml -Prelease -Dgpg.keyname=<your-key-id> deploy
@@ -54,7 +54,7 @@ alternative path is `org.sonatype.central:central-publishing-maven-plugin` 0.11.
 uploads a bundle through the Portal publisher API instead of the staging API; it replaces
 the `<distributionManagement>` target.
 
-Central is immutable: a published `0.4.0-alpha.3` can never be replaced, so publish a
+Central is immutable: a published `0.4.0-alpha.4` can never be replaced, so publish a
 version deliberately and bump the version in `pom.xml`, `README.md` and `CHANGELOG.md` together.
 
 ### Blockers before the first release

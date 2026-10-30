@@ -1,6 +1,6 @@
 {
   "name": "@chronodb/sdk",
-  "version": "0.4.0-alpha.3",
+  "version": "0.4.0-alpha.4",
   "type": "module",
   "description": "ChronoDB Community HTTP client and normalized connector transport",
   "license": "SEE LICENSE IN LICENSE",

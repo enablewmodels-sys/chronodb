@@ -24,10 +24,10 @@ Source-available under [PolyForm Perimeter 1.0.0](LICENSE); preserve [NOTICE](NO
 
 ## Publishing to NuGet (maintainers)
 
-**Nothing has been published to nuget.org.** `ChronoDB.Client` `0.4.0-alpha.3` is a
+**Nothing has been published to nuget.org.** `ChronoDB.Client` `0.4.0-alpha.4` is a
 source package. The project file now carries the metadata `dotnet pack` needs:
 
-- `PackageId` `ChronoDB.Client` and `Version` `0.4.0-alpha.3`, matching the Python (`0.4.0a3`), TypeScript, Dart and Java SDKs
+- `PackageId` `ChronoDB.Client` and `Version` `0.4.0-alpha.4`, matching the Python (`0.4.0a4`), TypeScript, Dart and Java SDKs
 - `Title`, `Authors` and `Company` (ChronoDB, Inc.), `Product`, `Copyright`, `Description`, `PackageTags`
 - `PackageProjectUrl` <https://chronodb.co>, `RepositoryUrl`, `RepositoryType` git and `PublishRepositoryUrl` for the embedded commit
 - `PackageLicenseFile` LICENSE and `PackageReadmeFile` README.md, with LICENSE, NOTICE and README.md packed at the package root
@@ -36,8 +36,8 @@ source package. The project file now carries the metadata `dotnet pack` needs:
 ```sh
 dotnet pack sdk/csharp/Chronograph -c Release -o /tmp/nupkg
 # the package root should list LICENSE, NOTICE and README.md
-unzip -l /tmp/nupkg/ChronoDB.Client.0.4.0-alpha.3.nupkg
-dotnet nuget push /tmp/nupkg/ChronoDB.Client.0.4.0-alpha.3.nupkg \
+unzip -l /tmp/nupkg/ChronoDB.Client.0.4.0-alpha.4.nupkg
+dotnet nuget push /tmp/nupkg/ChronoDB.Client.0.4.0-alpha.4.nupkg \
   --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json
 ```
 

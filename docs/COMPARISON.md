@@ -1,7 +1,7 @@
 # Comparison and alternatives
 
 This page answers one question: why would you use ChronoDB instead of a database you
-may already run? It compares ChronoDB Community 0.4.0-alpha.3 against PostgreSQL,
+may already run? It compares ChronoDB Community 0.4.0-alpha.4 against PostgreSQL,
 SQLite, DuckDB, Neo4j, Memgraph, XTDB, Dolt/Doltgres, TerminusDB, Kuzu/LadybugDB,
 CozoDB, a plain Arrow or Parquet lake and an in-process hash map.
 
@@ -209,4 +209,3 @@ What does not exist:
 - [Community and Managed](EDITIONS.md) and
   [licence and permitted use](LICENSING.md) — what the PolyForm Perimeter 1.0.0
   terms allow, and what they do not.
-

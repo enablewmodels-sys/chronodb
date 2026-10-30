@@ -7,7 +7,7 @@ environment variables and SDK imports remain supported without changes.
 **An embedded temporal graph database in Rust. Replay a world, branch its future,
 and carry the selected history forward.**
 
-Community 0.4.0-alpha.3 (development checkout) stores directed, typed relationship versions with microsecond
+Community 0.4.0-alpha.4 (development checkout) stores directed, typed relationship versions with microsecond
 validity and 16-byte opaque payloads. It runs inside a Rust application or through
 an optional single-workspace service with a browser console and scoped MCP tools.
 Domain adapters connect BCI streams, robotics recordings and world-model episodes;
@@ -16,7 +16,7 @@ quantum circuit/calibration support is exploratory.
 This checkout is a **Community alpha**, **source-available under PolyForm Perimeter 1.0.0**. The new [connector platform](docs/CONNECTOR_PLATFORM.md) adds 38 migration presets, typed assets and durable ingestion receipts. Existing format-2 workspaces require an [explicit upgrade to a separate destination](docs/UPGRADE_0_4.md).
 Modification and noncompeting commercial use are allowed; offering a competing product is restricted, including free competing products. See [licensing](docs/LICENSING.md).
 
-[Source repository](https://github.com/enablewmodels-sys/chronograph) · [Download the alpha](https://github.com/enablewmodels-sys/chronograph/releases/tag/v0.4.0-alpha.3).
+[Source repository](https://github.com/enablewmodels-sys/chronograph) · [Download the alpha](https://github.com/enablewmodels-sys/chronograph/releases/tag/v0.4.0-alpha.4).
 [Managed hosting](docs/HOSTED.md) is available as a launch preview with Google and GitHub signup,
 invited email accounts, MFA, private project databases, scoped API keys and an
 encrypted secret vault. Billing and automated email delivery are not configured. See [release status](docs/REQUIREMENTS.md),
@@ -84,14 +84,14 @@ stays outside graph data; no password, cookie session or cloud account is needed
 Ctrl+C synchronizes and stops the service. No server starts during installation.
 The [native bundle guide](docs/INSTALL.md) avoids compiler/Node requirements on a
 matching prebuilt target. Prebuilt binaries, a Python wheel and the source archive
-are attached to the [v0.4.0-alpha.3 release](https://github.com/enablewmodels-sys/chronograph/releases/tag/v0.4.0-alpha.3).
+are attached to the [v0.4.0-alpha.4 release](https://github.com/enablewmodels-sys/chronograph/releases/tag/v0.4.0-alpha.4).
 
 Install a client straight from the release: no account, no clone. These commands
 are tested against the published assets.
 
 ```sh
-npm install https://github.com/enablewmodels-sys/chronograph/releases/download/v0.4.0-alpha.3/chronograph-community-sdk-0.4.0-alpha.3.tgz
-pip install https://github.com/enablewmodels-sys/chronograph/releases/download/v0.4.0-alpha.3/chronograph_connectors-0.4.0a3-py3-none-any.whl
+npm install https://github.com/enablewmodels-sys/chronograph/releases/download/v0.4.0-alpha.4/chronograph-community-sdk-0.4.0-alpha.4.tgz
+pip install https://github.com/enablewmodels-sys/chronograph/releases/download/v0.4.0-alpha.4/chronograph_connectors-0.4.0a4-py3-none-any.whl
 ```
 
 The npm package is ESM-only. Import it by name after installing:
@@ -105,7 +105,7 @@ The TypeScript client is also published on npmjs.com as `@chronodb/sdk`. A
 prerelease must not take the `latest` tag, so it sits on `next`, and a bare install
 still resolves the `0.0.0-stage` placeholder from the first staged publish (verified
 2026-10-15: `npm view @chronodb/sdk version` returns `0.0.0-stage`, `@chronodb/sdk@next`
-returns `0.4.0-alpha.3`). Install the tagged prerelease or the release tarball above:
+returns `0.4.0-alpha.4`). Install the tagged prerelease or the release tarball above:
 
 ```sh
 npm install @chronodb/sdk@next

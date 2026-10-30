@@ -22,7 +22,7 @@
 
   <PropertyGroup>
     <PackageId>ChronoDB.Client</PackageId>
-    <Version>0.4.0-alpha.3</Version>
+    <Version>0.4.0-alpha.4</Version>
     <Title>ChronoDB Community .NET client</Title>
     <Authors>ChronoDB, Inc.</Authors>
     <Company>ChronoDB, Inc.</Company>
@@ -36,7 +36,7 @@
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>0.4.0-alpha.3 - initial ChronoDB Community .NET client source package. Not yet published to nuget.org. Changelog: https://github.com/enablewmodels-sys/chronograph/blob/main/sdk/csharp/CHANGELOG.md</PackageReleaseNotes>
+    <PackageReleaseNotes>0.4.0-alpha.4 - initial ChronoDB Community .NET client source package. Not yet published to nuget.org. Changelog: https://github.com/enablewmodels-sys/chronograph/blob/main/sdk/csharp/CHANGELOG.md</PackageReleaseNotes>
     <!-- Left at the NuGet default. Set to true if the restrictive PolyForm Perimeter terms
          should prompt every consumer for acceptance before install. -->
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>

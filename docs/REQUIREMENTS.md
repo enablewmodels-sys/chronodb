@@ -1,12 +1,12 @@
 # Community release status
 
-Community **0.4.0-alpha.2** is the first public source-available alpha prepared for
-[this repository](https://github.com/enablewmodels-sys/chronograph). The
-[release page](https://github.com/enablewmodels-sys/chronograph/releases/tag/v0.4.0-alpha.2)
+Community **0.4.0-alpha.4** is the current source-available alpha prepared for
+[this repository](https://github.com/enablewmodels-sys/chronograph). Its
+[release page](https://github.com/enablewmodels-sys/chronograph/releases/tag/v0.4.0-alpha.4)
 is the source of truth for published binaries and checksums. It is an alpha with
 documented limitations, not a managed-service launch or a production SLA.
 
-The table below describes the current **alpha.3 development checkout**. Its multi-language SDKs and expanded catalog are distributed as source on `main`; alpha.2 downloads remain unchanged. No alpha.3 binary is published, and the only alpha.3 registry entry is the TypeScript client on npmjs.com (`@chronodb/sdk` 0.4.0-alpha.3, `next` tag).
+The table below describes the current **alpha.4 development checkout**. Its multi-language SDKs and expanded catalog are distributed as source on `main`. The release publishes the container image, the TypeScript and Python clients, the Rust crate and the SDK kit. Registries that still need an account or a credential are named in [publishing](PUBLISHING.md).
 
 | Area | Delivered | Limit or remaining work |
 | --- | --- | --- |

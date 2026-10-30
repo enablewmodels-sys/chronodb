@@ -58,7 +58,7 @@ jobs:
       # The evidence below is uploaded on every run, failure included, so it is checked for
       # credential-shaped bytes first: an artifact is downloadable and this is the last gate
       # before it leaves the runner.
-      - run: python3 scripts/release/check-secrets.py bench/reports/v0.4.0-alpha.3/phase-ci
+      - run: python3 scripts/release/check-secrets.py bench/reports/v0.4.0-alpha.4/phase-ci
         if: always()
       - uses: actions/upload-artifact@v4
         # Always, not only on success. The report under bench/reports is the only readable
@@ -69,7 +69,7 @@ jobs:
         with:
           name: verification-evidence
           path: |
-            bench/reports/v0.4.0-alpha.3/phase-ci/
+            bench/reports/v0.4.0-alpha.4/phase-ci/
             /tmp/chronograph-schema-*.png
             /tmp/chronograph-landing-*.png
             /tmp/chronograph-branches-*.png

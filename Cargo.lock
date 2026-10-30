@@ -520,7 +520,7 @@ dependencies = [
 
 [[package]]
 name = "chronograph-bench"
-version = "0.4.0-alpha.3"
+version = "0.4.0-alpha.4"
 dependencies = [
  "chronograph-db",
  "criterion",
@@ -530,7 +530,7 @@ dependencies = [
 
 [[package]]
 name = "chronograph-conn-bci"
-version = "0.4.0-alpha.3"
+version = "0.4.0-alpha.4"
 dependencies = [
  "arrow",
  "chronograph-db",
@@ -544,7 +544,7 @@ dependencies = [
 
 [[package]]
 name = "chronograph-conn-quantum"
-version = "0.4.0-alpha.3"
+version = "0.4.0-alpha.4"
 dependencies = [
  "arrow",
  "chronograph-connector-common",
@@ -560,7 +560,7 @@ dependencies = [
 
 [[package]]
 name = "chronograph-conn-robotics"
-version = "0.4.0-alpha.3"
+version = "0.4.0-alpha.4"
 dependencies = [
  "arrow",
  "chronograph-connector-common",
@@ -576,7 +576,7 @@ dependencies = [
 
 [[package]]
 name = "chronograph-conn-worldmodel"
-version = "0.4.0-alpha.3"
+version = "0.4.0-alpha.4"
 dependencies = [
  "arrow",
  "chronograph-connector-common",
@@ -593,7 +593,7 @@ dependencies = [
 
 [[package]]
 name = "chronograph-connector-common"
-version = "0.4.0-alpha.3"
+version = "0.4.0-alpha.4"
 dependencies = [
  "arrow",
  "serde",
@@ -605,7 +605,7 @@ dependencies = [
 
 [[package]]
 name = "chronograph-db"
-version = "0.4.0-alpha.3"
+version = "0.4.0-alpha.4"
 dependencies = [
  "arrow",
  "crc32fast",
@@ -620,7 +620,7 @@ dependencies = [
 
 [[package]]
 name = "chronograph-decoder"
-version = "0.4.0-alpha.3"
+version = "0.4.0-alpha.4"
 dependencies = [
  "serde",
  "serde_json",
@@ -630,7 +630,7 @@ dependencies = [
 
 [[package]]
 name = "chronograph-server"
-version = "0.4.0-alpha.3"
+version = "0.4.0-alpha.4"
 dependencies = [
  "argon2",
  "arrow",
@@ -657,7 +657,7 @@ dependencies = [
 
 [[package]]
 name = "chronograph-uring"
-version = "0.4.0-alpha.3"
+version = "0.4.0-alpha.4"
 dependencies = [
  "io-uring",
  "libc",
@@ -666,7 +666,7 @@ dependencies = [
 
 [[package]]
 name = "chronograph-wasm"
-version = "0.4.0-alpha.3"
+version = "0.4.0-alpha.4"
 dependencies = [
  "chronograph-decoder",
  "serde_json",
