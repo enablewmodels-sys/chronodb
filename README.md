@@ -103,9 +103,10 @@ const client = new Client("https://chronodb.co", process.env.CHRONOGRAPH_TOKEN);
 
 The TypeScript client is also published on npmjs.com as `@chronodb/sdk`. A
 prerelease must not take the `latest` tag, so it sits on `next`, and a bare install
-still resolves the `0.0.0-stage` placeholder from the first staged publish (verified
-2026-10-15: `npm view @chronodb/sdk version` returns `0.0.0-stage`, `@chronodb/sdk@next`
-returns `0.4.0-alpha.4`). Install the tagged prerelease or the release tarball above:
+still resolves the `0.0.0-stage` placeholder from the first staged publish. The
+registry copy is `0.4.0-alpha.3`; the `0.4.0-alpha.4` upload needs the npm trusted
+publisher entry updated for the renamed repository. Until then, install the release
+tarball above or the published prerelease:
 
 ```sh
 npm install @chronodb/sdk@next
