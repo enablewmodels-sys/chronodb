@@ -9,7 +9,7 @@ container image, and what still requires a human account holder.
 | Artifact | Registry | State |
 | --- | --- | --- |
 | GitHub release | `v0.4.0-alpha.4` | 7 assets; npm tarball, wheel, source and native archive answer 200 anonymously |
-| Container | GHCR `ghcr.io/enablewmodels-sys/chronodb:0.4.0-alpha.4` | multi-architecture workflow dispatched; local `docker build` and container smoke pass |
+| Container | GHCR `ghcr.io/enablewmodels-sys/chronodb:0.4.0-alpha.4` | multi-architecture workflow dispatched; local `docker build` and container smoke pass; `chronodb-container-0.4.0-alpha.4.tar.gz` is attached to the release for `docker load` |
 | TypeScript SDK | GitHub Packages `@enablewmodels-sys/chronodb-sdk` | `0.4.0-alpha.4` published; authenticated install only |
 | .NET SDK | GitHub Packages `ChronoDB.Client` | `0.4.0-alpha.4` published; authenticated install only |
 | Java SDK | GitHub Packages `co.chronodb:chronograph-community` | `0.4.0-alpha.4` published; authenticated install only |
