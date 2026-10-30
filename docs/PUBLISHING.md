@@ -4,12 +4,28 @@ This page is for maintainers. Nothing here is needed to *use* ChronoDB. It recor
 what is publicly installable today, the exact steps to publish the SDKs and the
 container image, and what still requires a human account holder.
 
-## What is publicly installable today
+## 0.4.0-alpha.4 release status (30 October 2026)
 
-Three paths work anonymously, with no account and no token: the GitHub release, the
-GHCR image, and — since 2026-10-12 — npmjs.com. The first two were verified on
-2026-10-01 with an unauthenticated `curl` and a native pull; the npm path was verified
-on 2026-10-15 with `npm view`.
+| Artifact | Registry | State |
+| --- | --- | --- |
+| GitHub release | `v0.4.0-alpha.4` | 7 assets; npm tarball, wheel, source and native archive answer 200 anonymously |
+| Container | GHCR `ghcr.io/enablewmodels-sys/chronodb:0.4.0-alpha.4` | multi-architecture workflow dispatched; local `docker build` and container smoke pass |
+| TypeScript SDK | GitHub Packages `@enablewmodels-sys/chronodb-sdk` | `0.4.0-alpha.4` published; authenticated install only |
+| .NET SDK | GitHub Packages `ChronoDB.Client` | `0.4.0-alpha.4` published; authenticated install only |
+| Java SDK | GitHub Packages `co.chronodb:chronograph-community` | `0.4.0-alpha.4` published; authenticated install only |
+| TypeScript SDK | npmjs.com `@chronodb/sdk` | blocked: publish returns 404 because the trusted publisher still names the old `chronograph` repository |
+| Python SDK | PyPI `chronograph-connectors` | blocked: OIDC says `invalid-publisher`; the trusted publisher must name `enablewmodels-sys/chronodb` |
+| Rust engine | crates.io `chronograph-db` | not uploaded: `CARGO_REGISTRY_TOKEN` is absent; `cargo publish --dry-run` passes |
+| Dart SDK | pub.dev `chronodb` | not uploaded: `PUB_TOKEN` is absent; `dart analyze` passes |
+| Java SDK | Maven Central | not uploaded: Portal token and signing key are absent |
+| .NET SDK | nuget.org | not uploaded: `NUGET_API_KEY` is absent |
+
+The repository was renamed from `enablewmodels-sys/chronograph` to
+`enablewmodels-sys/chronodb`. OIDC trusted publishers are matched by repository name,
+so the npm and PyPI entries created before the rename no longer match. Update them in
+the registry account; no repository token is needed.
+
+## What was publicly installable at alpha.3 (historical)
 
 | Path | Install | Evidence |
 | --- | --- | --- |

@@ -50,7 +50,7 @@ setting or credential — nothing half-on, and nothing pretending to be on.
 
 | Capability | Why it is not here |
 | --- | --- |
-| Publishing the remaining SDKs | The TypeScript client is on npmjs.com: `@chronodb/sdk` 0.4.0-alpha.3 on the `next` tag, published 2026-10-12. Its `latest` tag still resolves a `0.0.0-stage` placeholder, and the registry token on the build host answers E401 as of 2026-10-15, so that tag needs a fresh credential. PyPI, crates.io, pub.dev, Maven Central and nuget.org are still empty; each upload needs an account or credential a repository must not hold |
+| Publishing the remaining SDKs | The 0.4.0-alpha.4 GitHub release, GHCR workflow, GitHub Packages npm/NuGet/Maven entries and the local container image are built. npmjs.com, PyPI, crates.io, pub.dev, Maven Central and nuget.org still need an account or repository secret. The repository rename from `chronograph` to `chronodb` also invalidated the npm and PyPI OIDC trusted-publisher claims; update those entries in the registry accounts. See [publishing](PUBLISHING.md) |
 | Submitting to Google Play or the App Store | Needs the operator's own account, app record and signing keys; `appctl` builds the artifact and will not submit unattended |
 | Off-host backup, replication, automatic failover | Needs a destination and credentials; today the backup is local with a rotation, and an encrypted copy was taken off the instance by hand |
 | A multi-tenant scheduler with a queue | Deliberate: one writer and durable local storage per project is the model. `replicas > 1` is refused rather than silently downgraded |
