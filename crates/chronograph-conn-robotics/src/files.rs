@@ -135,7 +135,10 @@ pub fn mcap(path: impl AsRef<Path>, mapping: &Mapping) -> Result<Import> {
     };
     let mut total = 0;
     let mut mapped_bytes = 0usize;
-    for message in mcap::MessageStream::new(&bytes)? {
+    // mcap 0.26 validates chunk CRCs only when asked, so ask. A corrupted chunk must fail the
+    // import rather than yield partial data that looks complete.
+    let options = enumset::enum_set!(mcap::read::Options::ValidateChunkCrcs);
+    for message in mcap::MessageStream::new_with_options(&bytes, options)? {
         total += 1;
         if total > 1_000_000 {
             return Err(Error::Invalid("MCAP exceeds 1M source records".into()));

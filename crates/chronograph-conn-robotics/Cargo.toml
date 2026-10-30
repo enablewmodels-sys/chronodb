@@ -18,7 +18,8 @@ thiserror.workspace = true
 toml = "1.1"
 serde_json = { version = "1", features = ["float_roundtrip"] }
 # Official MCAP reader/writer with LZ4/Zstandard and CRC verification.
-mcap = "0.25"
+mcap = "0.26"
+enumset = "1"
 # Read-only rosbag2 SQLite ingestion, using a bundled reproducible native SQLite.
 rusqlite = { version = "0.40", default-features = false, features = ["libsqlite3-sys", "bundled", "limits"] }
 
