@@ -8,6 +8,7 @@ import SiteFooter from "./SiteFooter";
 const docs = [
   ["BCI", "BCI workspace & acquisition"],
   ["BCI_TRAINING", "BCI datasets & decoder workers"],
+  ["NEURAL_APPS", "Publish BCI web apps"],
   ["HOSTED", "Managed quickstart"],
   ["ISOLATED", "Self-hosted quickstart"],
   ["PRODUCTION", "Production operations"],

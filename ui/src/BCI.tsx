@@ -32,12 +32,14 @@ import {
   Pause,
   Check,
   Terminal,
+  Globe2,
 } from "lucide-react";
 import { graph } from "./api";
 import { useAuth } from "./main";
 import { managedSite, publicSite } from "./site";
 import { managedApi } from "./managed-api";
 import { Logo, Code, useAction } from "./shared";
+import NeuralApps from "./NeuralApps";
 import {
   loadBrowserDecoder,
   decodeToken,
@@ -2218,7 +2220,10 @@ export function BCIWorkspace({ demo = false }: { demo?: boolean }) {
       )}
       <BrowserDecodeCheck />
       <div className="bci-tabs" role="tablist" aria-label="BCI workspace">
-        {["Sessions", "Datasets", "Runs", "Live", "Boards"].map((t) => (
+        {(managedSite
+          ? ["Sessions", "Datasets", "Runs", "Live", "Publish", "Boards"]
+          : ["Sessions", "Datasets", "Runs", "Live", "Boards"]
+        ).map((t) => (
           <button
             key={t}
             role="tab"
@@ -2229,7 +2234,8 @@ export function BCIWorkspace({ demo = false }: { demo?: boolean }) {
               setPlaying(false);
             }}
           >
-            {t === "Live" && <Radio size={14} />} {t}
+            {t === "Live" && <Radio size={14} />}{" "}
+            {t === "Publish" && <Globe2 size={14} />} {t}
           </button>
         ))}
       </div>
@@ -2245,6 +2251,12 @@ export function BCIWorkspace({ demo = false }: { demo?: boolean }) {
             setSetup(true);
             setTab("Sessions");
           }}
+        />
+      ) : tab === "Publish" ? (
+        <NeuralApps
+          embedded
+          defaultInstance={current?.instance}
+          defaultSession={selected}
         />
       ) : !sessions.length ? (
         <section className="bci-panel bci-empty">

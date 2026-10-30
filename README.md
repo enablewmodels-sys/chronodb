@@ -37,6 +37,12 @@ source timestamps and gaps remain traceable. Hosted training requires separately
 configured compute; the local workflow is available now. Physical boards still
 need qualification on your own setup.
 
+[Publish a BCI web app](docs/NEURAL_APPS.md) from the same workspace: one recorded
+session becomes a read-only signal monitor, decoder dashboard or session explorer at
+`<name>.chronodb.co`, at a custom domain after DNS verification, or at a documented
+read-only API. Publishing needs no container runtime and never puts a project token
+in the browser.
+
 ## Decision models
 
 [Jev & Laya](docs/DECISION_MODELS.md) bindings preserve typed decisions and model

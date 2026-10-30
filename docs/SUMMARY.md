@@ -19,6 +19,7 @@
 - [Agent integrations](MCP.md)
 - [BCI research workspace](BCI.md)
 - [BCI datasets and training](BCI_TRAINING.md)
+- [Publish BCI web apps](NEURAL_APPS.md)
 - [Device and file formats](FORMATS.md)
 - [Decoders and EEG-to-text](DECODERS.md)
 - [Legacy BCI and LSL adapters](connectors/bci.md)

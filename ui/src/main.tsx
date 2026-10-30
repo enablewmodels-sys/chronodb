@@ -39,6 +39,7 @@ import {
   Menu,
   ChevronDown,
   Rocket,
+  Globe2,
 } from "lucide-react";
 import "@fontsource-variable/manrope";
 import "./style.css";
@@ -91,6 +92,7 @@ const ManagedSecurity = lazy(() => import("./ManagedSecurity"));
 const ManagedTeam = lazy(() => import("./ManagedTeam"));
 const ManagedSecrets = lazy(() => import("./ManagedSecrets"));
 const ManagedApps = lazy(() => import("./ManagedApps"));
+const NeuralApps = lazy(() => import("./NeuralApps"));
 const AuthContext = createContext<{
   connection: Connection | null;
   update: (s: Connection | null) => void;
@@ -517,6 +519,9 @@ class PageBoundary extends Component<{ children: ReactNode }, BoundaryState> {
 const navigation = [
   { path: "", title: "Overview", icon: Home },
   { path: "bci", title: "BCI workspace", icon: Activity },
+  ...(managedSite
+    ? [{ path: "publish", title: "Publish apps", icon: Globe2 }]
+    : []),
   { path: "explorer", title: "Explorer", icon: Network },
   { path: "branches", title: "Branches", icon: GitBranch },
   { path: "schema", title: "Schema & migrations", icon: Settings2 },
@@ -565,7 +570,7 @@ function Console() {
       </div>
       <nav aria-label="Console navigation" onClick={() => setMobileOpen(false)}>
         {[
-          ["Workspace", ["", "bci", "explorer", "branches"]],
+          ["Workspace", ["", "bci", "publish", "explorer", "branches"]],
           ["Build", ["schema", "write", "connectors"]],
           ["Manage", ["access", "secrets", "team", "operations", "apps"]],
         ].map(([label, paths]) => {
@@ -721,6 +726,7 @@ function Console() {
               <Routes>
                 {managedSite && (
                   <>
+                    <Route path="publish" element={<NeuralApps />} />
                     <Route path="security" element={<ManagedSecurity />} />
                     <Route
                       path="team"

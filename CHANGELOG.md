@@ -1,6 +1,19 @@
 # Changelog
 
 ## Unreleased
+- The BCI product now completes its own cycle in the hosted console: connect, record, train and
+  **publish**. `/app/publish` and a **Publish** tab inside the BCI workspace create a read-only app
+  from one recorded session. The app is served at `<slug>.<appDomain>` (or `/a/<slug>` on a
+  deployment without a domain), carries its own custom domain after a CNAME and TXT record verify,
+  and exposes a bounded read-only API. Three templates ship in
+  `launch/private/managed/control-plane/neural-apps-templates.mjs`: a signal monitor, a decoder
+  dashboard and a session explorer. `neural-apps.mjs` owns slug allocation, releases, domain
+  verification, host routing and the four allowed read operations; the project token never reaches
+  the browser, and every request is forced to the app's own instance and recording.
+  `test/neural-apps.test.mjs` covers 8 scenarios, including a real gateway sign-in, a public app
+  host, custom-domain verification with an injected resolver and the scope refusal. Caddy routes
+  `*.chronodb.co` and verified custom domains with on-demand TLS, and asks
+  `/internal/tls-allow` before issuing a certificate. See `docs/NEURAL_APPS.md`.
 - The console builds again from a clean checkout, which is what every CI job that builds it does.
   `scripts/build-sdk.mjs` compiled the TypeScript SDK with `sdk/typescript/node_modules/typescript/bin/tsc`
   and nothing installed that package before the console build, so `npm --prefix ui ci && npm --prefix ui run build`

@@ -575,3 +575,438 @@
   max-height: 360px;
   overflow: auto;
 }
+
+/* Neural app publishing ------------------------------------------------------ */
+.neural-publish {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.neural-publish.embedded {
+  margin-top: 12px;
+}
+.neural-embedded-head {
+  display: flex;
+  gap: 18px;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.neural-embedded-head h2 {
+  margin: 4px 0 8px;
+  font-size: clamp(22px, 2.4vw, 30px);
+  letter-spacing: -0.03em;
+}
+.neural-embedded-head p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 62ch;
+  line-height: 1.65;
+}
+.neural-lifecycle {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+.neural-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 12px;
+  background: var(--surface);
+  min-width: 0;
+}
+.neural-step.done {
+  border-color: #245448;
+  background: linear-gradient(180deg, #112d2b, var(--surface));
+}
+.neural-step-index {
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+.neural-step.done .neural-step-index {
+  border-color: #34d399;
+  color: #04121a;
+  background: #34d399;
+}
+.neural-step strong {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+.neural-step p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.45;
+}
+.neural-step-link {
+  margin-left: auto;
+  align-self: flex-end;
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  color: var(--link);
+  font-size: 11px;
+  white-space: nowrap;
+}
+.neural-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 12px;
+}
+.neural-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  background: var(--canvas);
+  color: var(--ink);
+  padding: 14px;
+  font: inherit;
+  cursor: pointer;
+  transition:
+    border-color 0.16s,
+    transform 0.16s;
+}
+.neural-card:hover {
+  border-color: #3f5f8c;
+  transform: translateY(-1px);
+}
+.neural-card.selected {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+.neural-art {
+  display: block;
+  height: 62px;
+  border-radius: 10px;
+  background: radial-gradient(circle at 30% 20%, #14304c, #0a1522 70%);
+  border: 1px solid #1b3450;
+  overflow: hidden;
+}
+.neural-art svg {
+  width: 100%;
+  height: 100%;
+  stroke: #5eead4;
+  stroke-width: 1.8;
+  fill: none;
+  opacity: 0.85;
+}
+.neural-art svg rect {
+  fill: #5eead4;
+  stroke: none;
+  opacity: 0.55;
+}
+.neural-art svg circle {
+  fill: #7dd3fc;
+  stroke: none;
+}
+.neural-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+.neural-card-kicker {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.neural-card strong {
+  font-size: 15px;
+  line-height: 1.3;
+}
+.neural-card code {
+  display: block;
+  color: #7dd3fc;
+  font-size: 11px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.neural-badges {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 3px;
+}
+.neural-status {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 3px 8px;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid var(--rule);
+  color: var(--muted);
+  white-space: nowrap;
+}
+.neural-status.live,
+.neural-status.active {
+  color: #6ee7b7;
+  border-color: #245448;
+  background: #0c2420;
+}
+.neural-status.paused,
+.neural-status.pending {
+  color: #fcd34d;
+  border-color: #4a3a12;
+  background: #241d0a;
+}
+.neural-meta {
+  color: var(--muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+.neural-urlrow {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: var(--canvas);
+}
+.neural-url {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  min-width: 0;
+  flex: 1;
+  color: #7dd3fc;
+}
+.neural-url a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+}
+.neural-copy {
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+  font-size: 11px;
+  padding: 5px 8px;
+}
+.neural-open {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  text-decoration: none;
+  font-size: 12px;
+}
+.neural-pathline {
+  margin: 8px 0 4px;
+  overflow-wrap: anywhere;
+}
+.neural-h3 {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 28px 0 8px;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+}
+.neural-domains {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+.neural-domain {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: var(--canvas);
+}
+.neural-domain > div:first-child {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+.neural-domain strong {
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.neural-domain p {
+  flex-basis: 100%;
+  margin: 0;
+}
+.neural-domain-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.neural-domain-add {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+.neural-domain-add .field {
+  flex: 1;
+  min-width: 220px;
+}
+.neural-instructions {
+  margin: 10px 0 4px;
+  padding-left: 20px;
+  line-height: 1.7;
+  font-size: 13px;
+}
+.neural-api {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: var(--canvas);
+  margin: 10px 0;
+}
+.neural-api code {
+  color: #7dd3fc;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+  flex: 1;
+}
+.neural-api-list {
+  display: grid;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.neural-api-list code {
+  color: var(--ink);
+  font-size: 11px;
+}
+.neural-template-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 14px 0 22px;
+}
+.neural-template {
+  text-align: left;
+  border: 1px solid var(--rule);
+  border-radius: 13px;
+  background: var(--canvas);
+  color: var(--ink);
+  padding: 12px;
+  font: inherit;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color 0.16s;
+}
+.neural-template:hover {
+  border-color: #3f5f8c;
+}
+.neural-template.selected {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+.neural-template strong {
+  font-size: 14px;
+}
+.neural-template > span:not(.neural-art) {
+  color: var(--link);
+  font-size: 11px;
+}
+.neural-template p {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+.neural-slug {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.neural-slug input {
+  flex: 1;
+  min-width: 0;
+}
+.neural-slug span {
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 45%;
+}
+.neural-selected {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  color: var(--muted);
+  font-size: 12px;
+  margin: 0 0 14px;
+}
+.neural-explainer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.neural-explainer-grid strong {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+.neural-explainer-grid p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+@media (max-width: 900px) {
+  .neural-lifecycle,
+  .neural-explainer-grid,
+  .neural-template-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .neural-lifecycle,
+  .neural-explainer-grid,
+  .neural-template-grid {
+    grid-template-columns: 1fr;
+  }
+  .neural-urlrow {
+    align-items: stretch;
+  }
+  .neural-url {
+    flex-basis: 100%;
+  }
+}

@@ -225,10 +225,13 @@ API credentials or vault secrets. Capture and restore these as an operator workf
 there is no cross-project transactional snapshot or point-in-time recovery service.
 
 Local backups share the instance's failure domain. Automated off-host recovery,
-replication, high availability, billing, custom domains, organization SSO, external
-alert delivery and an uptime SLA are not provisioned. Monitor disk, memory, backup
-freshness and key expiration before onboarding production workloads. Arrange an
-independent security review and off-host recovery drill before sensitive BCI data.
+replication, high availability, billing, organization SSO, external alert delivery and
+an uptime SLA are not provisioned. A verified custom domain is supported for a
+published neural app (see [Publish BCI web apps](NEURAL_APPS.md)); it depends on the
+deployment's wildcard DNS and on-demand TLS route, not on a separate domain product.
+Monitor disk, memory, backup freshness and key expiration before onboarding production
+workloads. Arrange an independent security review and off-host recovery drill before
+sensitive BCI data.
 
 The nip.io hostname follows the current public IP. An EC2 stop/start can change
 that IP; use a stable address and owned domain for a permanent customer endpoint.

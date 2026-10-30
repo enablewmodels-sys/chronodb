@@ -82,7 +82,15 @@ preview, and every action appends to a ledger that holds reference names rather 
 persistence size is a ceiling: a container with database-like environment names and no persistent
 mount is refused, and so is a volume whose recorded size disagrees with the manifest.
 
-The product reaches it too. The console's **Apps** page lists a project's apps with health and the
+A second, lighter path serves the BCI product. **Publish apps** turns one recorded session into a
+read-only document at `<slug>.<appDomain>` or `<origin>/a/<slug>`, with a custom domain that
+becomes routable only after its CNAME and TXT records verify. The app calls a bounded read-only
+projection of that one recording; the project token never reaches the browser. Publishing needs no
+container runtime, so it is available on every Managed deployment. [Publish BCI web apps](NEURAL_APPS.md)
+covers the templates, the API limits and the Caddy on-demand TLS route.
+
+The container path remains for applications that need their own process. The console's **Apps**
+page lists a project's apps with health and the
 active image digest and offers plan, deploy, promote, roll back and destroy, behind
 `/managed/apps*` in the control plane. Hosting is opt-in through a `hosting` block in the
 configuration: with it absent every one of those routes answers 404 and the page says hosting is not

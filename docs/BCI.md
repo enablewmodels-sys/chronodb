@@ -245,6 +245,20 @@ validator and complete study-specific metadata before describing a dataset as
 BIDS-valid. Participant identities, consent, coordinates and device approvals are
 never invented.
 
+## Publish the result
+
+A hosted workspace can turn one recorded session into a read-only web app. Open
+**Publish apps**, or the **Publish** tab in the BCI workspace, choose a template and the
+recording, then publish. The app is live at `<name>.chronodb.co` (or
+`<origin>/a/<name>` on a deployment without a domain) and exposes a documented,
+read-only API. Add a custom domain with a CNAME and TXT record; it becomes routable only
+after both verify. The project token stays on the server, and the app can read only its
+own recording. See [Publish BCI web apps](NEURAL_APPS.md).
+
+Publishing is not clinical publication. An unlisted app is still readable by anyone
+with the URL, so remove participant identifiers before publishing and choose the
+recording deliberately.
+
 Use pseudonymous identifiers and minimize sensitive metadata. Managed remains a
 launch preview: no regulated-health hosting agreement or certification is implied.
 Choose isolated deployment when organizational policy requires it. Scope keys,
