@@ -1,11 +1,11 @@
 # Changelog
 
 ## 0.4.0-alpha.4 — 30 October 2026
-- The release publishes the BCI app platform and refreshes every package artifact that has a
-  registry credential: the container image, the TypeScript SDK, the Rust crate, the Python wheel
-  and the SDK kit. Package names and versions are unchanged in shape: `@chronodb/sdk`
-  `0.4.0-alpha.4`, `chronograph-db` `0.4.0-alpha.4`, `chronograph-connectors` `0.4.0a4`,
-  `chronodb` `0.4.0-alpha.4` and `ChronoDB.Client` `0.4.0-alpha.4`.
+- The release carries the BCI app platform and version `0.4.0-alpha.4` for every SDK. The GitHub
+  release, GitHub Packages npm/NuGet/Maven entries and the local container image are built. The
+  Rust crate, Python wheel and Dart package pass their local checks; npmjs.com, PyPI, crates.io,
+  pub.dev, Maven Central and nuget.org still need their account or repository secret. See
+  [publishing](docs/PUBLISHING.md).
 - The BCI product now completes its own cycle in the hosted console: connect, record, train and
   **publish**. `/app/publish` and a **Publish** tab inside the BCI workspace create a read-only app
   from one recorded session. The app is served at `<slug>.<appDomain>` (or `/a/<slug>` on a

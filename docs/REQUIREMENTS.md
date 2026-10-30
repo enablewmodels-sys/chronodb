@@ -1,12 +1,12 @@
 # Community release status
 
 Community **0.4.0-alpha.4** is the current source-available alpha prepared for
-[this repository](https://github.com/enablewmodels-sys/chronograph). Its
+[this repository](https://github.com/enablewmodels-sys/chronodb). Its
 [release page](https://github.com/enablewmodels-sys/chronograph/releases/tag/v0.4.0-alpha.4)
 is the source of truth for published binaries and checksums. It is an alpha with
 documented limitations, not a managed-service launch or a production SLA.
 
-The table below describes the current **alpha.4 development checkout**. Its multi-language SDKs and expanded catalog are distributed as source on `main`. The release publishes the container image, the TypeScript and Python clients, the Rust crate and the SDK kit. Registries that still need an account or a credential are named in [publishing](PUBLISHING.md).
+The table below describes the current **alpha.4 development checkout**. Its multi-language SDKs and expanded catalog are distributed as source on `main`. The release carries the GitHub assets, the GitHub Packages entries and a loadable container archive. npmjs.com, PyPI, crates.io, pub.dev, Maven Central and nuget.org still need an account or a credential, named in [publishing](PUBLISHING.md).
 
 | Area | Delivered | Limit or remaining work |
 | --- | --- | --- |

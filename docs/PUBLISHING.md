@@ -8,8 +8,8 @@ container image, and what still requires a human account holder.
 
 | Artifact | Registry | State |
 | --- | --- | --- |
-| GitHub release | `v0.4.0-alpha.4` | 7 assets; npm tarball, wheel, source and native archive answer 200 anonymously |
-| Container | GHCR `ghcr.io/enablewmodels-sys/chronodb:0.4.0-alpha.4` | multi-architecture workflow dispatched; local `docker build` and container smoke pass; `chronodb-container-0.4.0-alpha.4.tar.gz` is attached to the release for `docker load` |
+| GitHub release | `v0.4.0-alpha.4` | 8 assets; npm tarball, wheel, source and native archive answer 200 anonymously |
+| Container | GHCR `ghcr.io/enablewmodels-sys/chronograph:0.4.0-alpha.4` | multi-architecture workflow dispatched to the original public `chronograph` package name; local `docker build` and container smoke pass; `chronodb-container-0.4.0-alpha.4.tar.gz` is attached to the release for `docker load` |
 | TypeScript SDK | GitHub Packages `@enablewmodels-sys/chronodb-sdk` | `0.4.0-alpha.4` published; authenticated install only |
 | .NET SDK | GitHub Packages `ChronoDB.Client` | `0.4.0-alpha.4` published; authenticated install only |
 | Java SDK | GitHub Packages `co.chronodb:chronograph-community` | `0.4.0-alpha.4` published; authenticated install only |
@@ -31,7 +31,7 @@ the registry account; no repository token is needed.
 | --- | --- | --- |
 | GitHub release `v0.4.0-alpha.3` | `npm install <asset URL>`, `pip install <asset URL>` | both asset URLs return HTTP 200 anonymously; the tag carries 8 assets |
 | GHCR `ghcr.io/enablewmodels-sys/chronograph:main` | `docker pull` | GHCR issued an anonymous pull token, length 72, and the OCI index lists `linux/amd64` and `linux/arm64` |
-| npmjs.com `@chronodb/sdk` | `npm install @chronodb/sdk@next` | anonymous `npm view @chronodb/sdk@next version` returns `0.4.0-alpha.3`; the bare name still resolves the `0.0.0-stage` placeholder on `latest` |
+| npmjs.com `@chronodb/sdk` | `npm install @chronodb/sdk@next` | anonymous `npm view @chronodb/sdk@next version` returns `0.4.0-alpha.3`; the bare name resolves the published `0.4.0-alpha.3` on `latest` |
 
 ```sh
 npm install https://github.com/enablewmodels-sys/chronograph/releases/download/v0.4.0-alpha.3/chronograph-community-sdk-0.4.0-alpha.3.tgz

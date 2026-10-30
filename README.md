@@ -16,7 +16,7 @@ quantum circuit/calibration support is exploratory.
 This checkout is a **Community alpha**, **source-available under PolyForm Perimeter 1.0.0**. The new [connector platform](docs/CONNECTOR_PLATFORM.md) adds 38 migration presets, typed assets and durable ingestion receipts. Existing format-2 workspaces require an [explicit upgrade to a separate destination](docs/UPGRADE_0_4.md).
 Modification and noncompeting commercial use are allowed; offering a competing product is restricted, including free competing products. See [licensing](docs/LICENSING.md).
 
-[Source repository](https://github.com/enablewmodels-sys/chronograph) · [Download the alpha](https://github.com/enablewmodels-sys/chronograph/releases/tag/v0.4.0-alpha.4).
+[Source repository](https://github.com/enablewmodels-sys/chronograph) · [Download the alpha](https://github.com/enablewmodels-sys/chronodb/releases/tag/v0.4.0-alpha.4).
 [Managed hosting](docs/HOSTED.md) is available as a launch preview with Google and GitHub signup,
 invited email accounts, MFA, private project databases, scoped API keys and an
 encrypted secret vault. Billing and automated email delivery are not configured. See [release status](docs/REQUIREMENTS.md),
@@ -84,14 +84,14 @@ stays outside graph data; no password, cookie session or cloud account is needed
 Ctrl+C synchronizes and stops the service. No server starts during installation.
 The [native bundle guide](docs/INSTALL.md) avoids compiler/Node requirements on a
 matching prebuilt target. Prebuilt binaries, a Python wheel and the source archive
-are attached to the [v0.4.0-alpha.4 release](https://github.com/enablewmodels-sys/chronograph/releases/tag/v0.4.0-alpha.4).
+are attached to the [v0.4.0-alpha.4 release](https://github.com/enablewmodels-sys/chronodb/releases/tag/v0.4.0-alpha.4).
 
 Install a client straight from the release: no account, no clone. These commands
 are tested against the published assets.
 
 ```sh
-npm install https://github.com/enablewmodels-sys/chronograph/releases/download/v0.4.0-alpha.4/chronograph-community-sdk-0.4.0-alpha.4.tgz
-pip install https://github.com/enablewmodels-sys/chronograph/releases/download/v0.4.0-alpha.4/chronograph_connectors-0.4.0a4-py3-none-any.whl
+npm install https://github.com/enablewmodels-sys/chronodb/releases/download/v0.4.0-alpha.4/chronodb-sdk-0.4.0-alpha.4.tgz
+pip install https://github.com/enablewmodels-sys/chronodb/releases/download/v0.4.0-alpha.4/chronograph_connectors-0.4.0a4-py3-none-any.whl
 ```
 
 The npm package is ESM-only. Import it by name after installing:
@@ -103,10 +103,9 @@ const client = new Client("https://chronodb.co", process.env.CHRONOGRAPH_TOKEN);
 
 The TypeScript client is also published on npmjs.com as `@chronodb/sdk`. A
 prerelease must not take the `latest` tag, so it sits on `next`, and a bare install
-still resolves the `0.0.0-stage` placeholder from the first staged publish. The
-registry copy is `0.4.0-alpha.3`; the `0.4.0-alpha.4` upload needs the npm trusted
-publisher entry updated for the renamed repository. Until then, install the release
-tarball above or the published prerelease:
+still resolves the published `0.4.0-alpha.3` prerelease. The `0.4.0-alpha.4` upload
+needs the npm trusted publisher entry updated for the renamed repository. Until then,
+install the release tarball above or the published prerelease:
 
 ```sh
 npm install @chronodb/sdk@next
@@ -120,21 +119,23 @@ against `npm.pkg.github.com`). [docs/SDK.md](docs/SDK.md) covers every language 
 
 ## Run the published container
 
+Create the admin token before the first run. The server needs an authentication
+store and exits when `/config/auth.json` is absent:
+
 ```sh
+docker run --rm -v chronodb-config:/config --entrypoint chronograph-server \
+  ghcr.io/enablewmodels-sys/chronograph:main \
+  admin create-token local-admin admin 90 /config/admin.token
+
 docker run --rm -p 8080:8080 \
   -v chronodb-data:/data -v chronodb-config:/config \
   ghcr.io/enablewmodels-sys/chronograph:main
 ```
 
 The image is multi-architecture (`linux/amd64` and `linux/arm64`), so it runs
-natively on Apple Silicon. Create a token inside the container and paste it into
-the console at http://127.0.0.1:8080:
-
-```sh
-docker run --rm -v chronodb-config:/config --entrypoint chronograph-server \
-  ghcr.io/enablewmodels-sys/chronograph:main \
-  admin create-token local-admin admin 90 /config/admin.token
-```
+natively on Apple Silicon. Paste the token into the console at
+http://127.0.0.1:8080. A release also carries
+`chronodb-container-0.4.0-alpha.4.tar.gz` for `docker load`.
 
 It is a convenience build, not a hardened distribution: it is unsigned and not
 notarized, and [known limits](docs/LIMITATIONS.md) still apply.
