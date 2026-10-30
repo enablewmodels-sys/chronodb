@@ -53,6 +53,11 @@ jobs:
         working-directory: sdk/typescript
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install the decoder fixture dependency
+        run: python -m pip install numpy
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
@@ -73,7 +78,7 @@ jobs:
           npm install -g npm@latest
           npm config set registry https://registry.npmjs.org
           npm pkg set name='@chronodb/sdk'
-          npm publish --access public --provenance
+          npm publish --access public --tag next --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
 
